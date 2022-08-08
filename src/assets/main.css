@@ -1,0 +1,215 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  font-weight: normal;
+}
+
+.container {
+  position: relative;
+  margin: 130px auto;
+  min-width: 230px;
+  max-width: 550px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.container input::placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.container h1 {
+  position: absolute;
+  top: -140px;
+  width: 100%;
+  font-size: 80px;
+  font-weight: 200;
+  color: #b83f45;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+
+.container .toggle-group,
+.container .toggle-item {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+}
+
+.container .toggle-group + label {
+  width: 60px;
+  height: 34px;
+  font-size: 0;
+  position: absolute;
+  top: 12px;
+  left: -8px;
+  transform: rotate(90deg);
+}
+
+.container .toggle-group + label::before {
+  content: '❯';
+  font-size: 22px;
+  color: #e6e6e6;
+  padding: 0 25px;
+}
+
+.container .toggle-group:checked + label::before {
+  color: #737373;
+}
+
+.container .task-name {
+  position: relative;
+  width: 100%;
+  font-size: 24px;
+  font-weight: inherit;
+  line-height: 24px;
+  color: inherit;
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: #00000001;
+  box-shadow: inset 0 -2px 1px #00000008;
+}
+
+.container .task-list {
+  margin: 0;
+  padding: 0;
+}
+
+.container .task-list li {
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+}
+
+.container .task-list li:last-child {
+  border-bottom: none;
+}
+
+.container .task-list .toggle-item + label {
+  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.container .task-list .toggle-item:checked + label {
+  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E');
+}
+
+.container .task-list label {
+  word-break: break-all;
+  padding: 15px 15px 15px 60px;
+  display: block;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #4d4d4d;
+  transition: color 0.4s;
+}
+
+.container .task-list li.completed label {
+  color: #cdcdcd;
+  text-decoration: line-through;
+}
+
+.container .task-list button {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+}
+
+.container .task-list button::after {
+  content: '×';
+  cursor: pointer;
+  top: 5px;
+}
+
+.container .task-list button:hover {
+  color: #af5b5e;
+}
+
+.container .task-list li:hover button {
+  display: block;
+}
+
+.container .task-tool {
+  padding: 10px 15px;
+  height: 50px;
+  text-align: center;
+  font-size: 15px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.container .task-tool::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2),
+    0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+.container .task-tool span {
+  float: left;
+  text-align: left;
+}
+
+.container .task-tool span strong {
+  font-weight: 300;
+}
+
+.container .task-tool ul {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container .task-tool ul li {
+  display: inline;
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.container .task-tool ul li:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+}
+
+.container .task-tool ul li.selected {
+  border-color: rgba(175, 47, 47, 0.2);
+}
+
+.container .task-tool button,
+.container .task-tool button:active {
+  float: right;
+  position: relative;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.container .task-tool button:hover {
+  text-decoration: underline;
+}
