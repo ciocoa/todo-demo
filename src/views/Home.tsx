@@ -29,7 +29,10 @@ export default defineComponent({
     }
 
     const onClear = () => {
-      todoList.value = todoList.value.filter(obj => obj.status === false)
+      todoList.value
+        .filter(obj => obj.status === true)
+        .map(obj => obj.id)
+        .forEach(e => onDelete(e))
     }
 
     const newList = computed(() => {
