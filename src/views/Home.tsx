@@ -29,7 +29,7 @@ export default defineComponent({
     }
 
     const onClear = () => {
-      todoList.value.filter(obj => obj.status === false)
+      todoList.value = todoList.value.filter(obj => obj.status === false)
     }
 
     const newList = computed(() => {
